@@ -1,5 +1,5 @@
 // Transfer priority level mnemonics per the recommendations given in the Cyphal Specification.
-#[derive(PartialEq, Copy, Clone, Debug)]
+#[derive(PartialEq, Copy, Clone, Debug, serde::Serialize)]
 pub enum CyphalPriority {
     Exceptional,
     Immediate,
@@ -29,7 +29,7 @@ impl From<u8> for CyphalPriority {
 }
 
 // Transfer kinds as defined by the Cyphal Specification.
-#[derive(PartialEq, Debug, Clone, Copy)]
+#[derive(PartialEq, Debug, Clone, Copy, serde::Serialize)]
 pub enum CyphalTransferKind {
     Message,
     Response,

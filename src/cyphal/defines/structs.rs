@@ -45,7 +45,7 @@ pub struct CyphalRxPacketStatus {
     pub toggle: bool
 }
 
-#[derive(Debug, Copy, Clone)]
+#[derive(Debug, Copy, Clone, serde::Serialize)]
 pub struct CyphalRxProps {
     pub priority: CyphalPriority,
     pub transfer_kind: CyphalTransferKind,
@@ -79,7 +79,7 @@ impl CyphalRxFrame {
     }
 }
 
-#[derive(Debug)]
+#[derive(Debug, Clone, Copy, serde::Serialize)]
 pub struct CyphalRxData <T> {
   pub data: T,
   pub props: CyphalRxProps
